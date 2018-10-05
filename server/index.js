@@ -9,7 +9,7 @@ const app = express();
 const router = require('./router')
 
 //DB Setup
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useCreateIndex: true })
 
 
 //App Setup
