@@ -24,7 +24,6 @@ const localLogin = new LocalStrategy(localOptions, (email, password, done) => {
             return done(null, user);
         })
     })
-    //Else, call done with false
 
 
 })
