@@ -7,7 +7,11 @@ tokenForUser = (user) => {
     const timestamp = new Date().getTime()
     return jwt.encode({ sub: user.id, iat: timestamp }, config.secret);
 }
-
+exports.signin = (req, res, next) => {
+    //Check auth - get user from the done callback in passport
+    res.send({ token: tokenForUser(req.user)})
+    //Give them a token
+}
 
 exports.signup = (req, res, next) => {
   const email = req.body.email;
